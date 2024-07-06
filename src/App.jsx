@@ -1,35 +1,39 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/Navbar';
+import Footer from './components/Footer';
+
+const Home = React.lazy(() => import('./components/Home'));
+// const About = React.lazy(() => import('./pages/About'));
+// const OurTeam = React.lazy(() => import('./pages/OurTeam'));
+// const Contact = React.lazy(() => import('./pages/Contact'));
+// const Projects = React.lazy(() => import('./pages/Projects'));
+// const Apartment = React.lazy(() => import('./pages/Apartments'));
+// const Mansionette = React.lazy(() => import('./pages/Mansionette'));
+// const WareHouse = React.lazy(() => import('./pages/Warehouse'));
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <Suspense fallback={<Loading />}>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path='/about' element={<About />} />
+          <Route path='/our-team' element={<OurTeam />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/apartment' element={<Apartment />} />
+          <Route path='/mansionette' element={<Mansionette />} />
+          <Route path='/warehouse' element={<WareHouse />} /> */}
+        </Routes>
+        <Footer />
+      </Suspense>
+    </Router>
   );
+}
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
 }
 
 export default App;
