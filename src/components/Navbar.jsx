@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext';
 import logo from '../assets/images/thinkify-logo.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { cartItems } = useCart();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,41 +16,41 @@ function Navbar() {
     setIsOpen(false);
   };
 
-  return (
-    <nav className=" text-black px-4 py-2">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="w-20 p-2" onClick={closeMenu}>
-          <img src={logo} alt="Thinkify" />{' '}
-        </Link>
+  const cartCount = cartItems.length;
 
-        {/* Links (hidden on mobile, visible on desktop) */}
-        <div className="hidden md:flex flex-1 justify-center space-x-24 ">
-          <a href="/" className="hover:text-gray-400">
-            Home
-          </a>
-          <a href="/about" className="hover:text-gray-400">
-            About
-          </a>
-          <a href="/shop" className="hover:text-gray-400">
-            Shop
-          </a>
-          <a href="/account" className="hover:text-gray-400">
-            Account
-          </a>
-          <a href="/help" className="hover:text-gray-400">
-            Help
-          </a>
+  return (
+    <nav className="text-black px-4 py-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex space-x-4 items-center">
+          {/* Logo */}
+          <Link to="/" className="w-20 p-2" onClick={closeMenu}>
+            <img src={logo} alt="Thinkify" />
+          </Link>
+
+          {/* Links (hidden on mobile, visible on desktop) */}
+          <div className="hidden md:flex flex-1 justify-center space-x-12">
+            <Link to="/" className="hover:text-dark_green">
+              Shop
+            </Link>
+            <Link to="/cart" className="hover:text-dark_green">
+              Cart
+            </Link>
+          </div>
         </div>
 
-        {/* Cart Button */}
-        <div className="hidden md:block">
-          <button
-            type="button"
+        {/* Cart Button (visible on both mobile and desktop) */}
+        <div className="relative">
+          <Link
+            to="/cart"
             className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded flex items-center"
           >
             <FaShoppingCart className="mr-2" /> Cart
-          </button>
+            {cartCount > 0 && (
+              <span className="ml-2 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+                {cartCount}
+              </span>
+            )}
+          </Link>
         </div>
 
         {/* Hamburger Menu (visible on mobile) */}
@@ -56,7 +58,7 @@ function Navbar() {
           <button
             type="button"
             onClick={toggleMenu}
-            className="text-white focus:outline-none"
+            className="text-black focus:outline-none"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -66,33 +68,16 @@ function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-700 p-4">
-          <a href="/" className="block py-2 text-white hover:text-gray-400">
-            Home
-          </a>
-          <a
-            href="/about"
-            className="block py-2 text-white hover:text-gray-400"
-          >
-            About
-          </a>
-          <a href="/shop" className="block py-2 text-white hover:text-gray-400">
+          <Link to="/" className="block py-2 text-white" onClick={closeMenu}>
             Shop
-          </a>
-          <a
-            href="/account"
-            className="block py-2 text-white hover:text-gray-400"
+          </Link>
+          <Link
+            to="/cart"
+            className="block py-2 text-white"
+            onClick={closeMenu}
           >
-            Account
-          </a>
-          <a href="/help" className="block py-2 text-white hover:text-gray-400">
-            Help
-          </a>
-          <button
-            type="button"
-            className="w-full bg-blue-500 hover:bg-blue-700 text-white py-2 mt-2 rounded flex justify-center items-center"
-          >
-            <FaShoppingCart className="mr-2" /> Cart
-          </button>
+            Cart
+          </Link>
         </div>
       )}
     </nav>
