@@ -18,6 +18,11 @@ function SearchBar() {
         <input
           type="text"
           className="w-full px-6 py-4 text-sm text-gray-500 bg-white border-none rounded-full focus:outline-none"
+    <div className="flex items-center justify-center">
+      <div className=" relative w-full max-w-md rounded p-2 shadow-lg shadow-black">
+        <input
+          type="text"
+          className="w-full px-4 py-4 text-sm border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Search Categories, Products and Brands"
           value={query}
           onChange={handleInputChange}
@@ -25,6 +30,7 @@ function SearchBar() {
         <button
           type="button"
           className="absolute right-2 top-1/2 transform -translate-y-1/2 px-6 py-2 text-white bg-dark_green rounded-full hover:bg-teal-600 focus:outline-none shadow-md"
+          className="absolute right-0 top-0 mt-4 mr-3 px-4 py-2 text-white bg-dark_green rounded-full hover:bg-blue-600"
           onClick={handleSearch}
         >
           Search
