@@ -1,29 +1,29 @@
 // itemsData.js
 
-import fictionBooks from '../assets/images/all-sales/fiction-books.png';
-import crayons from '../assets/images/all-sales/crayons.png';
-import screenLaptop from '../assets/images/all-sales/3-screen-laptop.png';
-import fancyBag from '../assets/images/all-sales/fancy-bag.png';
-import glitterPens from '../assets/images/all-sales/glitter-pens.png';
-import hardCoverBook from '../assets/images/all-sales/hard-cover-book.png';
-import kiddiesPen from '../assets/images/all-sales/kiddies-pen.png';
-import lunchBox from '../assets/images/all-sales/lunch-box.png';
-import readingDesk from '../assets/images/all-sales/reading-desk.png';
-import rollerBag from '../assets/images/all-sales/roller-bag.png';
-import schoolBag from '../assets/images/all-sales/school-bag.png';
-import schoolDeskSet from '../assets/images/all-sales/school-desk-set.png';
-import schoolLaptop from '../assets/images/all-sales/school-laptop.png';
-import schoolTag from '../assets/images/all-sales/school-tag.png';
-import schoolWatch from '../assets/images/all-sales/school-watch.png';
-import sketchBook from '../assets/images/all-sales/sketch-book.png';
-import teenBag from '../assets/images/all-sales/teen-bag.png';
-import thickCrayons from '../assets/images/all-sales/thick-crayons.png';
-import virtualReality from '../assets/images/all-sales/virtual-reality.png';
-import waterproofBag from '../assets/images/all-sales/waterproof-bag.png';
-import allSalesLogo from '../assets/images/all-sales.png';
-import bulkSalesLogo from '../assets/images/bulk-sales.png';
-import discountSalesLogo from '../assets/images/discount-sales.png';
-import newArrivalsLogo from '../assets/images/new-arrivals.png';
+import fictionBooks from '../images/all-sales/fiction-books.png';
+import crayons from '../images/all-sales/crayons.png';
+import screenLaptop from '../images/all-sales/3-screen-laptop.png';
+import fancyBag from '../images/all-sales/fancy-bag.png';
+import glitterPens from '../images/all-sales/glitter-pens.png';
+import hardCoverBook from '../images/all-sales/hard-cover-book.png';
+import kiddiesPen from '../images/all-sales/kiddies-pen.png';
+import lunchBox from '../images/all-sales/lunch-box.png';
+import readingDesk from '../images/all-sales/reading-desk.png';
+import rollerBag from '../images/all-sales/roller-bag.png';
+import schoolBag from '../images/all-sales/school-bag.png';
+import schoolDeskSet from '../images/all-sales/school-desk-set.png';
+import schoolLaptop from '../images/all-sales/school-laptop.png';
+import schoolTag from '../images/all-sales/school-tag.png';
+import schoolWatch from '../images/all-sales/school-watch.png';
+import sketchBook from '../images/all-sales/sketch-book.png';
+import teenBag from '../images/all-sales/teen-bag.png';
+import thickCrayons from '../images/all-sales/thick-crayons.png';
+import virtualReality from '../images/all-sales/virtual-reality.png';
+import waterproofBag from '../images/all-sales/waterproof-bag.png';
+import allSalesLogo from '../images/all-sales.png';
+import bulkSalesLogo from '../images/bulk-sales.png';
+import newArrivalsLogo from '../images/new-arrivals.png';
+import discountSalesLogo from '../images/discount-sales.png';
 
 export const items = {
   'all-sales': [
