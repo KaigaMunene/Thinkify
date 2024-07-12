@@ -16,11 +16,6 @@ function CategoryButton({ logo, label, onClick, isActive, color }) {
         className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-4"
       />
       <span className="text-sm md:text-base">{label}</span>
-      className={`flex items-center p-2 rounded ${isActive ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
-      style={{ backgroundColor: color }}
-    >
-      <img src={logo} alt={label} className="w-8 h-8 mr-2" />
-      {label}
     </button>
   );
 }

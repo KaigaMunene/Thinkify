@@ -6,7 +6,6 @@ module.exports = {
       colors: {
         dark_green: '#08AC9F',
         dark_purple: '#B607A4',
-        ft-style-home-page
         mild_blue: '#657DAC',
         light_gray: '#9F9F9F',
         cream: '#F5F5F5',
@@ -15,7 +14,6 @@ module.exports = {
         light_purple: '#5000E50D',
         light_red: '#E400940D',
         dark_gray: '#657DAC',
-        dark_yellow: '#F59C05',
       },
     },
   },

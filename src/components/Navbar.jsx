@@ -22,9 +22,6 @@ function Navbar() {
     <nav className="text-black px-8 py-2 w-full bg-gradient-to-r from-light_purple to-light_red">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-24 items-center">
-    <nav className="text-black px-4 py-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex space-x-4 items-center">
           {/* Logo */}
           <Link to="/" className="w-20 p-2" onClick={closeMenu}>
             <img src={logo} alt="Thinkify" />
@@ -50,11 +47,6 @@ function Navbar() {
             <FaShoppingCart className="mr-2 text-dark_purple" /> Cart
             {cartCount > 0 && (
               <span className="ml-2 bg-dark_purple text-white rounded-full px-2 py-1 text-xs">
-            className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded flex items-center"
-          >
-            <FaShoppingCart className="mr-2" /> Cart
-            {cartCount > 0 && (
-              <span className="ml-2 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
                 {cartCount}
               </span>
             )}
@@ -81,14 +73,11 @@ function Navbar() {
             className="block py-2 text-black hover:text-dark_green border-b-2"
             onClick={closeMenu}
           >
-        <div className="md:hidden bg-gray-700 p-4">
-          <Link to="/" className="block py-2 text-white" onClick={closeMenu}>
             Shop
           </Link>
           <Link
             to="/cart"
             className="block py-2 text-black hover:text-dark_green"
-            className="block py-2 text-white"
             onClick={closeMenu}
           >
             Cart

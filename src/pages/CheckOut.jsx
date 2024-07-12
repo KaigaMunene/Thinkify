@@ -39,7 +39,6 @@ function Checkout() {
   };
 
   return (
- ft-style-home-page
     <div className="container mx-auto px-4 pt-24">
       <div className="flex-col justify-center items-center">
         {' '}
@@ -71,34 +70,6 @@ function Checkout() {
 
       {paymentMethod && (
         <form onSubmit={handleFormSubmit} className="mb-8">
-
-    <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold my-4">Checkout</h1>
-      <div className="mb-4">
-        <button
-          type="button"
-          onClick={() => handlePaymentChange('card')}
-          className={`py-2 px-4 rounded mr-2 ${paymentMethod === 'card' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        >
-          Pay via Card
-        </button>
-        <button
-          type="button"
-          onClick={() => handlePaymentChange('paypal')}
-          className={`py-2 px-4 rounded mr-2 ${paymentMethod === 'paypal' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        >
-          Pay via PayPal
-        </button>
-        <button
-          type="button"
-          onClick={() => handlePaymentChange('mpesa')}
-          className={`py-2 px-4 rounded ${paymentMethod === 'mpesa' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        >
-          Pay via Mpesa
-        </button>
-      </div>
-      {paymentMethod && (
-        <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
             {paymentMethod === 'card' && (
               <div>
