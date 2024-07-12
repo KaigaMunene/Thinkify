@@ -5,11 +5,17 @@ function CategoryButton({ logo, label, onClick, isActive, color }) {
     <button
       type="button"
       onClick={onClick}
-      className={`flex items-center p-2 rounded ${isActive ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
-      style={{ backgroundColor: color }}
+      className={`flex items-center m-2 md:m-4 p-2 md:p-4 rounded-xl shadow-lg transition duration-300 ${
+        isActive ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'
+      }`}
+      style={{ backgroundColor: isActive ? color : undefined }}
     >
-      <img src={logo} alt={label} className="w-8 h-8 mr-2" />
-      {label}
+      <img
+        src={logo}
+        alt={label}
+        className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-4"
+      />
+      <span className="text-sm md:text-base">{label}</span>
     </button>
   );
 }
